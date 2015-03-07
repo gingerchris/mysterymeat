@@ -1,0 +1,33 @@
+.home{
+  &__inner{
+    width:290px;
+    margin:0 auto;
+    color:white;
+    text-align:center;
+    @extend %phosphate;
+  
+    h1{
+      &.icon-hourglass{
+        font-size:166px;
+      }
+      font-size:42px;
+      line-height:42px;
+      letter-spacing:2.5px;
+    }
+
+    h2{
+      font-size: 23px;
+      color: #FFFFFF;
+      letter-spacing: 1.45px;
+      line-height: 30px;
+      margin-top:20px;
+    }
+
+    hr{
+      border:0;
+      background:url('../images/underline.svg');
+      height:11px;
+      margin:20px 0;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "mysterymeat",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gingerchris/mysterymeat",
+  "authors": [
+    "Chris Dowling"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/scripts/src",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "hogan": "~3.0.2"
+  }
+}

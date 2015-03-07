@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'phosphatesolidmedium';
+    src: url('../fonts/phosphatesolid-webfont.eot');
+    src: url('../fonts/phosphatesolid-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/phosphatesolid-webfont.woff2') format('woff2'),
+         url('../fonts/phosphatesolid-webfont.woff') format('woff'),
+         url('../fonts/phosphatesolid-webfont.ttf') format('truetype'),
+         url('../fonts/phosphatesolid-webfont.svg#phosphatesolidmedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+%phosphate{
+  font-family:'phosphatesolidmedium';
+  text-transform:uppercase;
+}
