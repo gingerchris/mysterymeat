@@ -21,11 +21,12 @@ function readURL(input,img) {
 
 var lb = {
   ct : $('#layout'),
+  json : {},
   init : function(){
     $('#blocks').on('click','li',function(){
       $('#iteminfo').removeClass('hide');
       $('.active').removeClass('active');
-      var append = $('<div class="s'+$(this).html()+' new active" />');
+      var append = $('<div class="s'+$(this).html()+' new active" data-size="'+$(this).html()+'" />');
       if($(this).html() == "1x1"){
         lb.activeDouble();
         append.html("<img /><img />");
@@ -145,35 +146,46 @@ var lb = {
     var json = {};
     var items = [];
     lb.ct.find('div').each(function(){
-      var i = [];
       if($(this).hasClass('s1x1')){
-        i.push(lb.addItem($(this)));
-        i.push(lb.addItem($(this),true));
+        items.push(lb.addItem($(this),true));
       }else{
-        i.push(lb.addItem($(this)));
+        items.push(lb.addItem($(this)));
       }
-      items.push(i);
     })
-    json = {
+    lb.json = {
       title : $('#title').val(),
       blurb : $('#blurb').val(),
       items : items
     };
-    console.log(JSON.stringify(json));
+    console.log(JSON.stringify(lb.json));
   },
   addItem : function(item, two){
     if(two){
       return {
-        alt : item.data('alt2'),
-        file : item.data('file2'),
-        side : item.data('float')
+        alt : item.data('alt'),
+        file : item.data('file'),
+        side : item.data('float'),
+        size : item.data('size'),
+        alt2 : item.data('alt2'),
+        file : item.data('file2')
       };
     }
     return {
       alt : item.data('alt'),
       file : item.data('file'),
-      side : item.data('float')
+      side : item.data('float'),
+      size : item.data('size')
     };
+  },
+  constructHTML : function(){
+    var items = "";
+    var json = lb.json;
+    $.each(json.items,function(k,v){
+      console.log(v);
+      v.pos = k;
+      var tpl = templates["item_"+v.size].render(v);
+      console.log(tpl);
+    })
   }
 }
 

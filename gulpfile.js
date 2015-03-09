@@ -74,7 +74,7 @@ gulp.task('hulk', function() {
 });
 
 //compiling our Javascripts
-gulp.task('scripts', function() {
+gulp.task('scripts', ['hulk'], function() {
     //this is where our dev JS scripts are
     return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/_includes/*.js'])
                 //this is the filename of the compressed version of our JS
