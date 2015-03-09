@@ -263,12 +263,15 @@ header {
 .project__inline {
   position: fixed;
   height: 80vh;
-  top: 25%;
-  left: 25%;
-  -webkit-transform: scale(0.5) translateX(-25%) translateY(-25%);
-      -ms-transform: scale(0.5) translateX(-25%) translateY(-25%);
-          transform: scale(0.5) translateX(-25%) translateY(-25%);
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(0.5) translateX(-50%) translateY(-50%);
+      -ms-transform: scale(0.5) translateX(-50%) translateY(-50%);
+          transform: scale(0.5) translateX(-50%) translateY(-50%);
   z-index: 1;
+  -webkit-transform-origin: top left;
+      -ms-transform-origin: top left;
+          transform-origin: top left;
   -webkit-transition: 1s all cubic-bezier(.25, .1, .25, 1);
           transition: 1s all cubic-bezier(.25, .1, .25, 1);
   -webkit-transition-delay: 0.25s;

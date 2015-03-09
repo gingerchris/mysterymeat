@@ -1,0 +1,13 @@
+<div class="page project">
+    <header>
+        <h1>{{project.title}}</h1>
+    </header>
+    
+    {{project.items}}
+    
+
+    <div class="project__inline">
+        {{project.gallery}}
+    </div>
+    
+</div>

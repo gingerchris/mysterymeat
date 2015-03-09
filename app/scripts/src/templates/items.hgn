@@ -1,0 +1,4 @@
+<div class="project__items--{{item.side}}">
+  {{item1}}
+  {{item2}}
+</div>

@@ -1,0 +1,3 @@
+<div class="project__item--2x2 project__item--{{item.side}}" data-pos="{{item.side}}_{{item.pos}}">
+    <img src="{{item.path}}" alt="{{item.alt}}" />
+</div>

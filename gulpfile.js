@@ -65,10 +65,18 @@ gulp.task('images-deploy', function() {
         .pipe(gulp.dest('dist/images'));
 });
 
+gulp.task('hulk', function() {
+    return gulp.src('app/scripts/src/templates/*')
+      .pipe(shell([
+        'node_modules/hogan/node_modules/hogan.js/bin/hulk app/scripts/src/templates/*.hgn > app/scripts/src/_includes/templates-compiled.js'
+      ])
+    );
+});
+
 //compiling our Javascripts
 gulp.task('scripts', function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/scripts/src/_includes/**/*.js', 'app/scripts/src/lib/*.js', 'app/scripts/src/*.js'])
+    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/_includes/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //catch errors
@@ -96,7 +104,7 @@ gulp.task('scripts-deploy', function() {
 //compiling our SCSS files
 gulp.task('styles', function() {
     //the initializer / master SCSS file, which will just be a file that imports everything
-    return gulp.src('app/styles/scss/init.scss')
+    return gulp.src('app/styles/scss/*.scss')
                 //include SCSS and list every "include" folder
                .pipe(sass({
                       errLogToConsole: true,
@@ -110,8 +118,6 @@ gulp.task('styles', function() {
                }))
                //catch errors
                .on('error', gutil.log)
-               //the final filename of our combined css file
-               .pipe(concat('styles.css'))
                //where to save our final, compressed css file
                .pipe(gulp.dest('app/styles'))
                //notify LiveReload to refresh
@@ -121,7 +127,7 @@ gulp.task('styles', function() {
 //compiling our SCSS files for deployment
 gulp.task('styles-deploy', function() {
     //the initializer / master SCSS file, which will just be a file that imports everything
-    return gulp.src('app/styles/scss/init.scss')
+    return gulp.src('app/styles/scss/*.scss')
                 //include SCSS includes folder
                .pipe(sass({
                       includePaths: [
@@ -132,8 +138,6 @@ gulp.task('styles-deploy', function() {
                    browsers: autoPrefixBrowserList,
                    cascade:  true
                }))
-               //the final filename of our combined css file
-               .pipe(concat('styles.css'))
                .pipe(minifyCSS())
                //where to save our final, compressed css file
                .pipe(gulp.dest('dist/styles'));
@@ -193,7 +197,8 @@ gulp.task('scaffold', function() {
 //  compress all scripts and SCSS files
 gulp.task('default', ['connect', 'scripts', 'styles'], function() {
     //a list of watchers, so it will watch all of the following files waiting for changes
-    gulp.watch('app/scripts/src/**', ['scripts']);
+    gulp.watch('app/scripts/src/templates/*.hgn', ['hulk', 'scripts']);
+    gulp.watch('app/scripts/src/*.js', ['scripts']);
     gulp.watch('app/styles/scss/**', ['styles']);
     gulp.watch('app/images/**', ['images']);
     gulp.watch('app/*.html', ['html']);

@@ -1,0 +1,62 @@
+#blocks{
+  float:left;
+}
+
+#layout{
+  width:400px;
+  float:left;
+  margin-left:20px;
+  border:1px solid black;
+  min-height:100px;
+  padding-bottom:200px;
+  position:relative;
+  div{
+    box-sizing:border-box;
+    border:1px solid black;
+    background:rgba(#5F2580, 0.5);
+    cursor:pointer;
+    
+    overflow:hidden;
+    img{
+      max-height:100%;
+    }
+    &:hover{
+      background:rgba(#5F2580, 0.8);
+    }
+    &.active{
+      background:rgba(#5F2580, 1);
+    }
+    &.s2x2{
+      width:50%;
+      height:200px;
+    }
+    &.s2x1, &.s1x1{
+      width:50%;
+      height:100px;
+    }
+    &.s1x1{
+      background:linear-gradient(to right, rgba(#5F2580, 0.5) 0%, rgba(#5F2580, 0.5) 50%, black 50%, rgba(#5F2580, 0.5) 51%);
+      &:hover{
+        background:linear-gradient(to right, rgba(#5F2580, 0.8) 0%, rgba(#5F2580, 0.8) 50%, black 50%, rgba(#5F2580, 0.8) 51%);
+      }
+      &.active{
+        background:linear-gradient(to right, rgba(#5F2580, 1) 0%, rgba(#5F2580, 1) 50%, black 50%, rgba(#5F2580, 1) 51%);
+      }
+      img{
+        max-width:50%;
+        float:right;
+        &:first-child{
+          float:left;
+        }
+      }
+    }
+    &.new{
+      position:absolute;
+      bottom:0;
+    }
+  }
+}
+
+.hide{
+  display:none;
+}

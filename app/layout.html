@@ -1,27 +1,71 @@
 <!doctype html>
 <html class="no-js" lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Website Title</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Website Title</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="styles/admin.css">
-    </head>
-    <body>
-        
-        <div id="blocks">
-            <ul>
-                <li>2x2</li>
-                <li>2x1</li>
-                <li>1x1</li>
-            </ul>
+    <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+
+    <div id="blocks">
+        <ul>
+            <li>2x2</li>
+            <li>2x1</li>
+            <li>1x1</li>
+        </ul>
+    </div>
+    <div id="layout">
+
+    </div>
+
+    <div id="details">
+        <form>
+            <h1>Project Info</h1>
+            <p>
+                <label for="project.title" >Project Title</label>
+                <input id="title" type="text" name="project.title" />
+            </p>
+            <p>
+                <label for="project.blurb">Project Detail</label>
+                <textarea name="project.blurb" id="blurb"></textarea>
+            </form>
         </div>
-        <div id="layout"></div>
+
+        <div id="iteminfo" class="hide">
+            <form>
+                <h1>Item Info</h1>
+                <h5 class="double hide">Item 1</h5>
+                <p>
+                    <label for="itemAlt">Alt Tag</label>
+                    <input type="text" name="itemAlt" id="itemAlt" />
+                </p>
+                <p>
+                    <label for="itemFile">File</label>
+                    <input type="file" name="itemFile" id="itemFile" />
+                </p>
+                <div class="hide double">
+                    <h5>Item 2</h2>
+                    <p>
+                        <label for="itemAlt2">Alt Tag</label>
+                        <input type="text" name="itemAlt" id="itemAlt2" />
+                    </p>
+                    <p>
+                        <label for="itemFile2">File</label>
+                        <input type="file" name="itemFile" id="itemFile2" />
+                    </p>
+                </div>
+            </form>
+        </div>
+
 
         
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="scripts/admin.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
     </body>
-</html>
+    </html>
