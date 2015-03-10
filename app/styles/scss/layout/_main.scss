@@ -74,6 +74,8 @@ header{
 
 #home{
   height:100vh;
+  min-height:640px;
   background-image: url("../images/home.jpg");
   background-size:cover;
+  background-position:center center;
 }

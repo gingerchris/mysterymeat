@@ -1,6 +1,5 @@
 $.fn.resetInput = function() {
-  var form = this.parents('form');
-  form.get(0).reset();
+  $('#item-data').get(0).reset();
   $('#itemAlt').val($('.active').data('alt'));
   $('#itemAlt2').val($('.active').data('alt2'));
   return this;
@@ -63,16 +62,51 @@ var lb = {
       lb.constructJSON();
     });
     $('#itemFile').resetInput().off('change').on('change',function(){
-      $('.active').data('file',$(this).val().replace(/^.*[\\\/]/, ''));
+      var filename = $(this).val().replace(/^.*[\\\/]/, '');
+      if(filename.indexOf(' ') > -1){
+        alert('don\t put spaces in your filenames!');
+        $(this).resetInput();
+        return false;
+      }
+      $('.active').data('file',filename);
+      lb.constructJSON();
+    });
+
+    $('#itemThumb').resetInput().off('change').on('change',function(){
+      var filename = $(this).val().replace(/^.*[\\\/]/, '');
+      if(filename.indexOf(' ') > -1){
+        alert('don\t put spaces in your filenames!');
+        $(this).resetInput();
+        return false;
+      }
+      $('.active').data('thumb',filename);
       readURL(this,$('.active').find('img:first-child'));
       lb.constructJSON();
     });
+
     $('#itemAlt2').resetInput().off('change').on('change',function(){
       $('.active').data('alt2',$(this).val());
       lb.constructJSON();
     });
     $('#itemFile2').resetInput().off('change').on('change',function(){
-      $('.active').data('file2',$(this).val().replace(/^.*[\\\/]/, ''));
+      var filename = $(this).val().replace(/^.*[\\\/]/, '');
+      if(filename.indexOf(' ') > -1){
+        alert('don\t put spaces in your filenames!');
+        $(this).resetInput();
+        return false;
+      }
+      $('.active').data('file2',filename);
+      lb.constructJSON();
+    });
+
+    $('#itemThumb2').resetInput().off('change').on('change',function(){
+      var filename = $(this).val().replace(/^.*[\\\/]/, '');
+      if(filename.indexOf(' ') > -1){
+        alert('don\t put spaces in your filenames!');
+        $(this).resetInput();
+        return false;
+      }
+      $('.active').data('thumb2',filename);
       readURL(this,$('.active').find('img:nth-child(2)'));
       lb.constructJSON();
     });
@@ -84,10 +118,27 @@ var lb = {
       lb.constructJSON();
     });
     $('#itemFile').resetInput().off('change').on('change',function(){
-      $('.active').data('file',$(this).val().replace(/^.*[\\\/]/, ''));
-      readURL(this,$('.active').find('img'));
+      var filename = $(this).val().replace(/^.*[\\\/]/, '');
+      if(filename.indexOf(' ') > -1){
+        alert('don\t put spaces in your filenames!');
+        $(this).resetInput();
+        return false;
+      }
+      $('.active').data('file',filename);
       lb.constructJSON();
     });
+    $('#itemThumb').resetInput().off('change').on('change',function(){
+      var filename = $(this).val().replace(/^.*[\\\/]/, '');
+      if(filename.indexOf(' ') > -1){
+        alert('don\t put spaces in your filenames!');
+        $(this).resetInput();
+        return false;
+      }
+      $('.active').data('thumb',filename);
+      readURL(this,$('.active').find('img:first-child'));
+      lb.constructJSON();
+    });
+
   },
   drop : function(event, ui){
     var left = ui.position.left;
@@ -163,16 +214,19 @@ var lb = {
     if(two){
       return {
         alt : item.data('alt'),
+        thumb : item.data('thumb'),
         file : item.data('file'),
         side : item.data('float'),
         size : item.data('size'),
         alt2 : item.data('alt2'),
-        file : item.data('file2')
+        thumb2 : item.data('thumb2'),
+        file2 : item.data('file2')
       };
     }
     return {
       alt : item.data('alt'),
       file : item.data('file'),
+      thumb : item.data('thumb'),
       side : item.data('float'),
       size : item.data('size')
     };
@@ -180,12 +234,30 @@ var lb = {
   constructHTML : function(){
     var items = "";
     var json = lb.json;
+
+    var path = encodeURIComponent(json.title.replace(' ','-'));
     $.each(json.items,function(k,v){
-      console.log(v);
       v.pos = k;
+      v.count = k+1;
+      v.path = path;
       var tpl = templates["item_"+v.size].render(v);
-      console.log(tpl);
-    })
+      items = items + tpl;
+    });
+
+    json.ritems = items;
+
+    json.gallery = templates['gallery'].render(json);
+    //generate lightbox gallery
+
+    json.content = templates["project"].render(json);
+    var page = templates["page"].render(json)
+    
+    var zip = new JSZip();
+    zip.file(path+"/put all your images in this folder.txt","");
+    zip.file(path+"/index.html", page);
+    var content = zip.generate({type:"blob"});
+    saveAs(content,path+'.zip');
+
   }
 }
 

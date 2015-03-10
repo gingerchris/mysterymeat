@@ -1,13 +1,13 @@
 <div class="page project">
     <header>
-        <h1>{{project.title}}</h1>
+        <h1>{{title}}</h1>
     </header>
     
-    {{project.items}}
+    {{{ritems}}}
     
 
     <div class="project__inline">
-        {{project.gallery}}
+        {{{gallery}}}
     </div>
     
 </div>

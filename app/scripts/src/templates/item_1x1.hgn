@@ -1,3 +1,8 @@
-<div class="project__item--1x1 project__item" data-pos="{{item.side}}_{{item.pos}}">
-    <img src="{{item.path}}" alt="{{item.alt}}" />
+<div class="project__items--{{side}}">
+  <div class="project__item--1x1 project__item" data-pos="{{side}}_{{pos}}">
+    <img src="/{{path}}/{{thumb}}" alt="{{alt}}" />
+  </div>
+  <div class="project__item--1x1 project__item" data-pos="{{side}}_{{pos}}">
+    <img src="/{{path}}/{{thumb2}}" alt="{{alt2}}" />
+  </div>
 </div>

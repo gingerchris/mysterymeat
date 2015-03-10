@@ -16,5 +16,8 @@
   ],
   "dependencies": {
     "hogan": "~3.0.2"
+  },
+  "devDependencies": {
+    "jszip": "~2.4.0"
   }
 }

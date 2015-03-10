@@ -1,0 +1,13 @@
+<div class="page" id="home">
+    <div class="home__inner">
+        <h1 class="icon-hourglass"></h1>
+        <hr />
+        <h1>Greenwich Meat Time</h1>
+        <h2>30th APRIL - 3rd MAY<br>
+            STUDIO 1.1 GALLERY<br>
+            57a Redchurch Street<br>
+            Shoreditch E2 7DJ
+        </h2>
+        <a href="#" class="icon-arrowRight" data-click-next></a>
+    </div>
+</div>

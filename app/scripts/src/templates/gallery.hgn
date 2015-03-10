@@ -1,0 +1,12 @@
+<div class="project__inline__inner">
+  {{#items}}
+    <div class="project__inline__item">
+      <img src="/{{path}}/{{file}}" alt="{{alt}}" />
+    </div>
+  {{/items}}
+  <ul>
+    {{#items}}
+      <li><a href="#" data-count="{{count}}">{{count}}</a></li>
+    {{/items}}
+  </ul>
+</div>

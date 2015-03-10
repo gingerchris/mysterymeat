@@ -11,19 +11,32 @@ var randomTimeout = function randomTimeout(elem,fn){
     });
 }
 
-$(function(){
-  $('.page__container').on('click','div[class^="project__item"]',function(){
-    var _this = $(this);
+var ww = $(window).width();
 
-    randomTimeout('.project > div',function(elem){
-      elem.addClass('project__item--hide');
+var gallery = {
+
+  init : function(){
+    var count = $('.project__inline__item').css('width',ww + 'px').length;
+    $('.project__inline__inner').css('width',count * ww + 'px');
+    $('.project__inline').css('height',$('.project__inline__inner').css('height'));
+  },
+  next : function(){},
+  prev : function(){}
+
+};
+
+$(function(){
+
+  if($('.project__inline').length){
+    $('.page__container').on('click','div[class^="project__item"]',function(){
+      var _this = $(this);    
+      $('.overlay').addClass('overlay--show');
+      $('.project__inline').addClass('project__inline--show');
     });
-    $('.project__inline').addClass('project__inline--show')
-      .one('transition-end',function(){
-        randomTimeout('.project > div',function(elem){
-          elem.removeClass('project__item--hide');
-        });
-      });
-    $('.overlay').addClass('overlay--show');
-  });
+
+    gallery.init();
+  }
+
+
+
 });

@@ -1,25 +1,26 @@
 //initialize all of our variables
-var app, base, concat, directory, gulp, gutil, hostname, path, refresh, sass, uglify, imagemin, minifyCSS, del, connect, autoprefixer, gulpSequence, shell, rename, sketch, iconfont, consolidate;
+var app, base, concat, directory;
 
 var autoPrefixBrowserList = ['last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'];
 
 //load all of our dependencies
 //add more here if you want to include more libraries
-gulp        = require('gulp');
-gutil       = require('gulp-util');
-concat      = require('gulp-concat');
-uglify      = require('gulp-uglify');
-sass        = require('gulp-sass');
-imagemin    = require('gulp-imagemin');
-minifyCSS   = require('gulp-minify-css');
-connect     = require('gulp-connect');
-autoprefixer = require('gulp-autoprefixer');
-gulpSequence = require('gulp-sequence').use(gulp);
-shell       = require('gulp-shell');
-rename = require("gulp-rename");
-sketch = require("gulp-sketch");
-iconfont = require('gulp-iconfont');
-consolidate = require('gulp-consolidate');
+var gulp        = require('gulp'),
+gutil       = require('gulp-util'),
+concat      = require('gulp-concat'),
+uglify      = require('gulp-uglify'),
+sass        = require('gulp-sass'),
+imagemin    = require('gulp-imagemin'),
+minifyCSS   = require('gulp-minify-css'),
+connect     = require('gulp-connect'),
+autoprefixer = require('gulp-autoprefixer'),
+gulpSequence = require('gulp-sequence').use(gulp),
+shell       = require('gulp-shell'),
+rename = require("gulp-rename"),
+sketch = require("gulp-sketch"),
+iconfont = require('gulp-iconfont'),
+consolidate = require('gulp-consolidate'),
+fs = require('fs');
 
 gulp.task('connect', function() {
   connect.server({
@@ -65,6 +66,14 @@ gulp.task('images-deploy', function() {
         .pipe(gulp.dest('dist/images'));
 });
 
+gulp.task('genhome', function() {
+  var options = {content : fs.readFileSync('app/home.hgn','utf-8')};
+    gulp.src('app/scripts/src/templates/page.hgn')
+      .pipe(consolidate('handlebars',options))
+      .pipe(rename('index.html'))
+      .pipe(gulp.dest('app'));
+});
+
 gulp.task('hulk', function() {
     return gulp.src('app/scripts/src/templates/*')
       .pipe(shell([
@@ -76,7 +85,7 @@ gulp.task('hulk', function() {
 //compiling our Javascripts
 gulp.task('scripts', ['hulk'], function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/_includes/*.js'])
+    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/jszip/dist/jszip.js', 'app/scripts/src/_includes/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //catch errors
@@ -201,6 +210,7 @@ gulp.task('default', ['connect', 'scripts', 'styles'], function() {
     gulp.watch('app/scripts/src/*.js', ['scripts']);
     gulp.watch('app/styles/scss/**', ['styles']);
     gulp.watch('app/images/**', ['images']);
+    gulp.watch('app/home.hgn', ['genhome']);
     gulp.watch('app/*.html', ['html']);
     gulp.watch('icon-font/*', ['symbols']);
 });

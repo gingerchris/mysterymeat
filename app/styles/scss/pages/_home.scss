@@ -1,7 +1,10 @@
 .home{
   &__inner{
+    position:relative;
     width:290px;
     margin:0 auto;
+    top:50%;
+    transform:translateY(-50%);
     color:white;
     text-align:center;
     @extend %phosphate;
@@ -28,6 +31,12 @@
       background:url('../images/underline.svg');
       height:11px;
       margin:20px 0;
+    }
+
+    a{
+      color:white;
+      font-size:64px;
+      text-shadow: 0px 0px 30px #0B152F;
     }
   }
 }
