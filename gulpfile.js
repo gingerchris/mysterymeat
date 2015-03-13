@@ -32,7 +32,7 @@ gulp.task('connect', function() {
 gulp.task('symbols', function(){
   var fontName = 'icons'; // set name of your symbol font
   var template = 'dowlo-style';
-  gulp.src('icon-font/symbol-font-14px.sketch') // you can also choose 'symbol-font-16px.sketch'
+  return gulp.src('icon-font/symbol-font-14px.sketch') // you can also choose 'symbol-font-16px.sketch'
     .pipe(sketch({
       export: 'artboards',
       formats: 'svg'
@@ -83,7 +83,7 @@ gulp.task('hulk', function() {
 });
 
 //compiling our Javascripts
-gulp.task('scripts', ['hulk'], function() {
+gulp.task('scripts', ['hulk', 'symbols'], function() {
     //this is where our dev JS scripts are
     return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/jszip/dist/jszip.js', 'app/scripts/src/_includes/*.js'])
                 //this is the filename of the compressed version of our JS

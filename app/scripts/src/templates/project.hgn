@@ -1,6 +1,6 @@
 <div class="page project">
     <header>
-        <h1>{{title}}</h1>
+        <h1>{{title}}<a href="#" class="icon-info"></a></h1>
     </header>
     
     {{{ritems}}}
@@ -8,6 +8,13 @@
 
     <div class="project__inline">
         {{{gallery}}}
+    </div>
+
+    <div class="project__detail">
+      <h1>{{title}}</h1>
+      <hr />
+      <p>{{blurb}}</p>
+      <a href="#" class="icon-close"></a>
     </div>
     
 </div>

@@ -1,12 +1,26 @@
 <div class="project__inline__inner">
   {{#items}}
     <div class="project__inline__item">
+      <a href="#" class="icon-prev"></a>
       <img src="/{{path}}/{{file}}" alt="{{alt}}" />
+      <a href="#" class="icon-close"></a>
+      <a href="#" class="icon-next"></a>
     </div>
+    {{#file2}}
+      <div class="project__inline__item">
+      <a href="#" class="icon-prev"></a>
+      <img src="/{{path}}/{{file2}}" alt="{{alt2}}" />
+      <a href="#" class="icon-close"></a>
+      <a href="#" class="icon-next"></a>
+    </div>
+    {{/file2}}
   {{/items}}
   <ul>
     {{#items}}
       <li><a href="#" data-count="{{count}}">{{count}}</a></li>
+      {{#count2}}
+        <li><a href="#" data-count="{{count2}}">{{count2}}</a></li>
+      {{/count2}}
     {{/items}}
   </ul>
 </div>

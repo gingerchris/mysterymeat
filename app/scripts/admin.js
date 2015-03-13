@@ -234,11 +234,20 @@ var lb = {
   constructHTML : function(){
     var items = "";
     var json = lb.json;
+    var count = 0;
 
-    var path = encodeURIComponent(json.title.replace(' ','-'));
+    var path = encodeURIComponent(json.title.replace(/ /g,'-'));
+
+    if(path == ""){
+      alert('Set your page title properly');
+      return false;
+    }
     $.each(json.items,function(k,v){
       v.pos = k;
-      v.count = k+1;
+      v.count = count++;
+      if(v.size == '1x1'){
+        v.count2 = count++;
+      }
       v.path = path;
       var tpl = templates["item_"+v.size].render(v);
       items = items + tpl;
@@ -253,6 +262,7 @@ var lb = {
     var page = templates["page"].render(json)
     
     var zip = new JSZip();
+    zip.file(path+"/add this to pages.json .txt",path);
     zip.file(path+"/put all your images in this folder.txt","");
     zip.file(path+"/index.html", page);
     var content = zip.generate({type:"blob"});

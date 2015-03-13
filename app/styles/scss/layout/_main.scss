@@ -38,22 +38,26 @@ header{
   font-size: 32px;
   letter-spacing: 6.9px;
   line-height: 30px;
+  
+  a.icon-info{
+    color:$navy;
+  }
 }
 
 .overlay{
   background:rgba($navy, 0.8);
   position:fixed;
-  top:100vh;
+  top:100%;
   left:0;
   right:0;
   bottom:0;
   z-index:8;
   opacity:0;
-  transition:1s opacity cubic-bezier(.25,.1,.25,1);
-  transition-delay:0.75s;
+  transition:opacity 1s cubic-bezier(.25,.1,.25,1), top 0s linear 1s ;
   &.overlay--show{
     opacity:1;
     top:0;
+    transition:opacity 1s cubic-bezier(.25,.1,.25,1);
   }
 }
 
