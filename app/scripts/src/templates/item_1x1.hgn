@@ -1,8 +1,12 @@
 <div class="project__items--{{side}}">
   <div class="project__item--1x1 project__item" data-pos="{{side}}_{{pos}}">
-    <img src="/{{path}}/{{thumb}}" alt="{{alt}}" />
+    <a href="/{{path}}/{{file}}">
+      <img src="/{{path}}/{{thumb}}" alt="{{alt}}" />
+    </a>
   </div>
   <div class="project__item--1x1 project__item" data-pos="{{side}}_{{pos}}">
-    <img src="/{{path}}/{{thumb2}}" alt="{{alt2}}" />
+    <a href="/{{path}}/{{file2}}">
+      <img src="/{{path}}/{{thumb2}}" alt="{{alt2}}" />
+    </a>
   </div>
 </div>

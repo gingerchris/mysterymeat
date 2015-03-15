@@ -16,13 +16,15 @@ $icons : (
   shop
   hourglass
   close
-  next
-  prev
+  arrow-left
+  arrow-right
   arrowRight
   cleaver
   pants
   hover
   info
+  envelope
+  mp-arts
 );
 $characters : (
   "\F001"
@@ -38,6 +40,8 @@ $characters : (
   "\F011"
   "\F012"
   "\F013"
+  "\F014"
+  "\F015"
 );
 
 %icon{

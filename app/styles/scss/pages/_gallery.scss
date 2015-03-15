@@ -1,0 +1,87 @@
+
+.mfp-container{
+  a{
+    color:white;
+    &.icon-arrow-left, &.icon-arrow-right{
+      font-size:54px;
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+    }
+    &.icon-arrow-right{
+      left:0;
+    }
+    &.icon-arrow-left{
+      right:0;
+    }
+  }
+  .mfp-close{
+    @extend .icon-after-close;
+    right:-40px;
+    top:40px;
+  }
+}
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: all $timing;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+.mfp-fade.mfp-bg.mfp-removing {
+  transition: all $timing 0.25s;
+  opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+  top:-100%;
+  transition: all $timing;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  top:0;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  top:-250%;
+}
+
+.mfp-fade.mfp-wrap .icon-arrow-left {
+  right:-250%;
+  transition: all $timing;
+}
+/* arrows animate in */
+.mfp-fade.mfp-wrap.mfp-ready .icon-arrow-left {
+  right:0;
+}
+/* arrows animate out */
+.mfp-fade.mfp-wrap.mfp-removing .icon-arrow-left {
+  right:-100%;
+}
+
+.mfp-fade.mfp-wrap .icon-arrow-right {
+  left:-100%;
+  transition: all $timing;
+}
+/* arrows animate in */
+.mfp-fade.mfp-wrap.mfp-ready .icon-arrow-right {
+  left:0;
+}
+/* arrows animate out */
+.mfp-fade.mfp-wrap.mfp-removing .icon-arrow-right {
+  left:-100%;
+}
+
+.mfp-counter{
+  left:0;
+  text-align:center;
+  a{
+      @extend %phosphate;
+      text-decoration:none;
+      font-size:35px;
+      line-height:50px;
+      margin:0 25px;
+    }
+}

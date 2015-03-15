@@ -85,7 +85,7 @@ gulp.task('hulk', function() {
 //compiling our Javascripts
 gulp.task('scripts', ['hulk', 'symbols'], function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/jszip/dist/jszip.js', 'app/scripts/src/_includes/*.js'])
+    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/jszip/dist/jszip.js', 'app/scripts/src/magnific-popup/dist/jquery.magnific-popup.js', 'app/scripts/src/_includes/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //catch errors

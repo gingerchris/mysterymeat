@@ -1,5 +1,6 @@
 #blocks {
-  float: left; }
+  float: left;
+  width: 30%; }
 
 #layout {
   width: 400px;

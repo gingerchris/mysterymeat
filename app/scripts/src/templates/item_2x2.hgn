@@ -1,3 +1,5 @@
 <div class="project__item--2x2 project__item--{{side}}" data-pos="{{side}}_{{pos}}">
+  <a href="/{{path}}/{{file}}">
     <img src="/{{path}}/{{thumb}}" alt="{{alt}}" />
+  </a>
 </div>

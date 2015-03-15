@@ -7,9 +7,12 @@
 //global things
 @import 'general/_reset';
 @import 'general/_icons';
+@import 'general/_lightbox';
 @import 'general/_type';
 @import 'layout/_main';
 
 //pages
 @import 'pages/_home';
 @import 'pages/_project';
+@import 'pages/_gallery';
+@import 'pages/_listing';

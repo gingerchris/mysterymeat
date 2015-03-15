@@ -4,11 +4,16 @@
     width:290px;
     margin:0 auto;
     top:50%;
+    transition:1s all cubic-bezier(.25,.1,.25,1);
     transform:translateY(-50%);
     color:white;
     text-align:center;
     @extend %phosphate;
-  
+    
+    &--hide{
+      transform:translateY(-250%);
+    }
+
     h1{
       &.icon-hourglass{
         font-size:166px;
@@ -38,5 +43,121 @@
       font-size:64px;
       text-shadow: 0px 0px 30px #0B152F;
     }
+  }
+}
+
+.mm_about{
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:55%;
+  transition:1s all cubic-bezier(.25,.1,.25,1);
+  transition-delay:0.25s;
+  transform:translateX(-50%) translateY(-250%);
+  z-index:10;
+  
+  text-align:center;
+  
+  font-size: 12px;
+  letter-spacing: .85px;
+  line-height: 17px;
+
+  color:white;
+  @extend %phosphate;
+  
+  @include bp(tablet){
+    width:90%;
+  }
+  
+  &--show{
+    transform:translateX(-50%) translateY(-50%);
+  }
+  
+  h1{
+    font-size:42px;
+    line-height:42px;
+    letter-spacing:2.5px;
+  }
+
+  hr{
+    border:0;
+    background:url('../images/underline.svg') center top no-repeat;
+    height:11px;
+    margin:20px 0;
+  }
+
+  p{
+    color: #FFFFFF;
+    margin-top:20px;
+  }
+
+  ul{
+    list-style-type:none;
+    margin-top:25px;
+    width:100%;
+    text-align:center;
+    li{
+      display:inline-block;
+      text-align:left;
+      position:relative;
+      margin-right:20px;
+      padding-right:26px;
+      vertical-align:top;
+      &:after{
+        content:'';
+        display:block;
+        position:absolute;
+        right:0;
+        top:0;
+        width:6px;
+        height:70px;
+        background:url('../images/vertical.svg') center center no-repeat;
+      }
+      &:last-child{
+        &:after{
+          display:none;
+        }
+        margin-right:0;
+        padding-right:0;
+      }
+      @include bp(tablet){
+        display:block;
+        text-align:center;
+        &:after{
+          display:none;
+        }
+      }
+    }
+    a, span{
+      color:white;
+      text-decoration:none;
+      line-height:40px;
+      @include bp(tablet){
+        line-height:30px;
+        &.icon-mp-arts:before{
+          line-height:60px;
+        }
+      }
+      &:before{
+        vertical-align:top;
+        margin-right:10px;
+        font-size:28px;
+        @include bp(tablet){
+          font-size:20px;
+          line-height:22px;
+        }
+      }
+      &.icon-mp-arts:before{
+        font-size:68px;
+        margin-top:-17px;
+      }
+    }
+  }
+
+  a.icon-close{
+    color:white;
+    font-size:45px;
+    margin-top:20px;
+    display:inline-block;
   }
 }

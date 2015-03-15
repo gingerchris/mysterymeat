@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Website Title</title>
+    <title>MM PageBuilder Pro 2000 - UNLICENSED COPY</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -12,47 +12,55 @@
 <body>
 
     <div id="blocks">
+        <div id="details">
+            <form>
+                <h1>Project Info</h1>
+                <p>
+                    <label for="project.title" >Project Title</label>
+                    <input id="title" type="text" name="project.title" />
+                </p>
+                <p>
+                    <label for="project.blurb">Project Detail</label>
+                    <textarea name="project.blurb" id="blurb"></textarea>
+                </p>
+            </form>
+        </div>
+        <hr />
+        <h2>Add a grid block</h2>
+        <p>Click a size below to add a block to your layout.  Then click and drag the block into place, before adding the item details</p>
         <ul>
             <li>2x2</li>
             <li>2x1</li>
             <li>1x1</li>
         </ul>
+        <div class="gen hide">
+            <p>When you've added all your blocks and details, click Build My Page</p>
+            <button id="html">Build My Page</button>
+        </div>
     </div>
     <div id="layout">
 
     </div>
 
-    <div id="details">
-        <form>
-            <h1>Project Info</h1>
+    <div id="iteminfo" class="hide">
+        <form id="item-data">
+            <h2>Add / Update Item Info</h2>
+            <button class="delete">Delete this item</button>
+            <h5 class="double hide">Item 1</h5>
             <p>
-                <label for="project.title" >Project Title</label>
-                <input id="title" type="text" name="project.title" />
+                <label for="itemAlt">Alt Tag</label>
+                <input type="text" name="itemAlt" id="itemAlt" />
             </p>
             <p>
-                <label for="project.blurb">Project Detail</label>
-                <textarea name="project.blurb" id="blurb"></textarea>
-            </form>
-        </div>
-
-        <div id="iteminfo" class="hide">
-            <form id="item-data">
-                <h1>Item Info</h1>
-                <h5 class="double hide">Item 1</h5>
-                <p>
-                    <label for="itemAlt">Alt Tag</label>
-                    <input type="text" name="itemAlt" id="itemAlt" />
-                </p>
-                <p>
-                    <label for="itemFile">File</label>
-                    <input type="file" name="itemFile" id="itemFile" />
-                </p>
-                <p>
-                    <label for="itemThumb">Thumb</label>
-                    <input type="file" name="itemThumb" id="itemThumb" />
-                </p>
-                <div class="hide double">
-                    <h5>Item 2</h2>
+                <label for="itemFile">File</label>
+                <input type="file" name="itemFile" id="itemFile" />
+            </p>
+            <p>
+                <label for="itemThumb">Thumb</label>
+                <input type="file" name="itemThumb" id="itemThumb" />
+            </p>
+            <div class="hide double">
+                <h5>Item 2</h2>
                     <p>
                         <label for="itemAlt2">Alt Tag</label>
                         <input type="text" name="itemAlt" id="itemAlt2" />
@@ -70,7 +78,7 @@
         </div>
 
 
-        
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script src="scripts/app.js"></script>
         <script src="scripts/admin.js"></script>

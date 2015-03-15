@@ -16,11 +16,36 @@
         </div>
     </div>
 
+    <div class="mm__projects">
+        <ul></ul>
+    </div>
+
+    <div class="mm_about">
+        <h1>MYSTERYMEAT</h1>
+        <hr />
+        <p>MysteryMeat began after a drunken punch up between two best friends in Golden Square, Soho, London. In a make or break situation, they decided to team up and settle their differences by making pictures and listening to hip hop. The product of this collaboration is an exciting, colourful mix of black humour and thought provoking imagery. Their influences include MF DOOM, The Adam and Joe Show, Francis Bacon, Mark E Smith &amp; The Smiths.</p>
+        <ul>
+            <li>
+                <a class="icon-envelope" href="mailto:hello@mysterymeat.co.uk">hello@mysterymeat.co.uk</a><br />
+                <a class="icon-envelope" href="mailto:timh@mp-arts.co.uk">timh@mp-arts.co.uk</a>
+            </li>
+            <li>
+                <a class="icon-twitter" href="http://twitter.com/mysterymeat" target="_blank">Mysterymeat</a><br />
+                <a class="icon-instagram" href="http://instagram.com/mysterymeat_">mysterymeat</a>
+            </li>
+            <li>
+                <span>Represented By</span><br />
+                <a class="icon-mp-arts" href="http://mp-arts.co.uk" target="_blank"></a>
+            </li>
+        </ul>
+        <a href="#" class="icon-close"></a>
+    </div>
+
     <footer>
         <ul>
-            <li><a href="#" class="icon-cleaver"></a></li>
-            <li><a href="#" class="icon-mm"></a></li>
-            <li><a href="#" class="icon-pants"></a></li>
+            <li><a href="#" title="MYSTERMYEAT PROJECTS" class="icon-cleaver"></a></li>
+            <li><a href="#" title="ABOUT MYSTERYMEAT" class="icon-mm"></a></li>
+            <li><a href="http://portfolioshite.tumblr.com" target="_blank" title="MYSTERYMEAT TUMBLR" class="icon-pants"></a></li>
         </ul>
     </footer>
 
@@ -33,7 +58,7 @@
     e=o.createElement(i);r=o.getElementsByTagName(i)[0];
     e.src='//www.google-analytics.com/analytics.js';
     r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-    ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+    ga('create','UA-60746980-1','auto');ga('send','pageview');
     </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

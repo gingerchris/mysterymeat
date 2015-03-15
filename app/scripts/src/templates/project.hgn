@@ -3,11 +3,8 @@
         <h1>{{title}}<a href="#" class="icon-info"></a></h1>
     </header>
     
-    {{{ritems}}}
-    
-
-    <div class="project__inline">
-        {{{gallery}}}
+    <div class="project__tiles">
+      {{{ritems}}}
     </div>
 
     <div class="project__detail">

@@ -43,6 +43,9 @@ var lb = {
       })
     });
 
+    $(document).on('click', '.delete', lb.deleteItem);
+    $(document).on('click', '#html', lb.constructHTML);
+
     lb.ct.on('click','div',function(){
       $('.active').removeClass('active');
       $(this).addClass('active');
@@ -172,11 +175,11 @@ var lb = {
 
       if($(a).data('top') == $(b).data('top')){
 
-        if($(a).data('side') > $(b).data('side')){
+        if($(a).data('side') < $(b).data('side')){
           return 1;
         }
 
-        if($(a).data('side') < $(b).data('side')){
+        if($(a).data('side') > $(b).data('side')){
           return -1;
         }
 
@@ -208,7 +211,23 @@ var lb = {
       blurb : $('#blurb').val(),
       items : items
     };
-    console.log(JSON.stringify(lb.json));
+    if(lb.json.items.length > 0){
+      $('.gen').removeClass('hide');
+    }else{
+      $('.gen').addClass('hide');
+    }
+    //console.log(JSON.stringify(lb.json));
+  },
+  deleteItem : function(e){
+    e.preventDefault();
+    $('.active').remove();
+    $('#iteminfo').addClass('hide');
+    lb.constructJSON();
+    if(lb.json.items.length > 0){
+      $('.gen').removeClass('hide');
+    }else{
+      $('.gen').addClass('hide');
+    }
   },
   addItem : function(item, two){
     if(two){
@@ -235,7 +254,7 @@ var lb = {
     var items = "";
     var json = lb.json;
     var count = 0;
-
+    var zip = new JSZip();
     var path = encodeURIComponent(json.title.replace(/ /g,'-'));
 
     if(path == ""){
@@ -245,8 +264,12 @@ var lb = {
     $.each(json.items,function(k,v){
       v.pos = k;
       v.count = count++;
+      zip.file(path+'/'+v.file,'');
+      zip.file(path+'/'+v.thumb,'');
       if(v.size == '1x1'){
         v.count2 = count++;
+        zip.file(path+'/'+v.file2,'');
+        zip.file(path+'/'+v.thumb2,'');
       }
       v.path = path;
       var tpl = templates["item_"+v.size].render(v);
@@ -260,11 +283,12 @@ var lb = {
 
     json.content = templates["project"].render(json);
     var page = templates["page"].render(json)
-    
-    var zip = new JSZip();
+    zip.file(path+"/page.json",JSON.stringify(lb.json));
     zip.file(path+"/add this to pages.json .txt",path);
-    zip.file(path+"/put all your images in this folder.txt","");
+    zip.file(path+"/replace all the images in this folder with your images.txt","");
+    zip.file(path+"/square.png is the preview image used on the projects page.txt","");
     zip.file(path+"/index.html", page);
+    zip.file(path+'/square.png','');
     var content = zip.generate({type:"blob"});
     saveAs(content,path+'.zip');
 
