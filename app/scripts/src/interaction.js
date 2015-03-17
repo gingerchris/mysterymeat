@@ -1,8 +1,3 @@
-/*
-  todo : ermove hash on close gallery
-  mobile swipes
-*/
-
 $('*').on('webkitTransitionEnd transitionend msTransitionEnd oTransitionEnd', function () {
     $(this).trigger('transition-end');
 });
