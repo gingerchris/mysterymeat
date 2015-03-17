@@ -570,7 +570,8 @@ header {
   header a.icon-info {
     color: #0B152F;
     -webkit-transition: opacity 0.3s cubic-bezier(.25, .1, .25, 1);
-            transition: opacity 0.3s cubic-bezier(.25, .1, .25, 1); }
+            transition: opacity 0.3s cubic-bezier(.25, .1, .25, 1);
+    margin-top: -8px; }
     header a.icon-info:hover {
       opacity: 0.7; }
 

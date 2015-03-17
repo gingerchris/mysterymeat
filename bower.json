@@ -15,7 +15,8 @@
     "tests"
   ],
   "dependencies": {
-    "hogan": "~3.0.2"
+    "hogan": "~3.0.2",
+    "jquery-touchswipe": "~1.6.8"
   },
   "devDependencies": {
     "jszip": "~2.4.0"

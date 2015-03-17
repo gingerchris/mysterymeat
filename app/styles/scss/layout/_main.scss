@@ -50,6 +50,7 @@ header{
   a.icon-info{
     color:$navy;
     transition: opacity 0.3s $bez;
+    margin-top:-8px;
     &:hover{
       opacity:0.7;
     }
