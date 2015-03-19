@@ -29,7 +29,9 @@ var gallery = {
         arrowMarkup: '<a href="#" title="%title%" class="icon-arrow-%dir%"></a>', // markup of an arrow button
       },
       callbacks : {
-        close : paginate.resetState
+        close : function(){
+          paginate.resetState();
+        }
       }
     });
 

@@ -24,7 +24,7 @@
         <h1>MYSTERYMEAT</h1>
         <hr />
         <p>MysteryMeat began after a drunken punch up between two best friends in Golden Square, Soho, London. In a make or break situation, they decided to team up and settle their differences by making pictures and listening to hip hop. The product of this collaboration is an exciting, colourful mix of black humour and thought provoking imagery. Their influences include MF DOOM, The Adam and Joe Show, Francis Bacon, Mark E Smith &amp; The Smiths.</p>
-        <ul>
+        <ul class="not-tablet not-mobile">
             <li>
                 <a class="icon-envelope" href="mailto:hello@mysterymeat.co.uk">hello@mysterymeat.co.uk</a><br />
                 <a class="icon-envelope" href="mailto:timh@mp-arts.co.uk">timh@mp-arts.co.uk</a>
@@ -38,6 +38,12 @@
                 <a class="icon-mp-arts" href="http://mp-arts.co.uk" target="_blank"></a>
             </li>
         </ul>
+        <div class="not-desktop">
+            <a class="icon-envelope" href="mailto:hello@mysterymeat.co.uk"></a>
+            <a class="icon-twitter" href="http://twitter.com/mysterymeat" target="_blank"></a>
+            <a class="icon-instagram" href="http://instagram.com/mysterymeat_"></a>
+            <a class="icon-mp-arts" href="mailto:timh@mp-arts.co.uk" target="_blank"></a>
+        </div>
         <a href="#" class="icon-close"></a>
     </div>
 

@@ -10,27 +10,27 @@
     }
     &:after{
       opacity:1;
-      transition-delay:0.25s;
+      transition-delay:0.2s;
     }
   }
   &:after{
     content:"\F012";
     color:white;
-    font-size:100px;
+    font-size:60px;
     @extend %icon;
     position:absolute;
     top:50%;
     left:50%;
     transform:translateX(-50%) translateY(-50%);
     opacity:0;
-    transition:0.5s opacity cubic-bezier(.25,.1,.25,1);
+    transition:0.4s opacity cubic-bezier(.25,.1,.25,1);
     transition-delay:0s;
   }
   img{
     width:100%;
     float:left;
-    transition:0.5s opacity cubic-bezier(.25,.1,.25,1);
-    transition-delay:0.25s;
+    transition:0.4s opacity cubic-bezier(.25,.1,.25,1);
+    transition-delay:0.2s;
   }
   &--left{
     float:left;
@@ -235,5 +235,9 @@
     font-size:45px;
     margin-top:20px;
     display:inline-block;
+    transition: all $timing;
+    &:hover{
+      transform: scale(1.1);
+    }
   }
 }

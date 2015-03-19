@@ -16,9 +16,18 @@
     }
   }
   .mfp-close{
+    width:auto;
     @extend .icon-after-close;
     right:-40px;
-    top:40px;
+    //top:40px;
+    &:after{
+      transition: all $timing; 
+    }
+    &:hover{
+      &:after{
+        transform:scale(1.1);
+      }
+    }
   }
 }
 
@@ -83,5 +92,38 @@
       font-size:35px;
       line-height:50px;
       margin:0 25px;
+      opacity:0.4;
+      transition:all 0.4s linear;
+      &.active{
+        opacity:1;
+      }
     }
+}
+
+.mfp-container{
+  .icon-arrow-right{
+    z-index:2000;
+    position:relative;
+    margin-left:10%;
+  }
+  .icon-arrow-left{
+    position:relative;
+    z-index:2000;
+    margin-right:10%;
+  }
+  .icon-arrow-left, .icon-arrow-right{
+    &:before{
+      transition:all $timing;
+    }
+    &:hover{
+      &:before{
+        transform:scale(1.1); 
+      }
+    }
+  }
+  @include bp(tablet){
+    .icon-arrow-right, .icon-arrow-left{
+      display:none;
+    }
+  }
 }

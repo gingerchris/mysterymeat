@@ -1,3 +1,6 @@
+%shadow{
+  text-shadow: 0px 4px 3px rgba(#0B152F,0.2);
+}
 .home{
   &__inner{
     position:relative;
@@ -16,32 +19,45 @@
 
     h1{
       &.icon-hourglass{
-        font-size:166px;
+        font-size:105px;
       }
-      font-size:42px;
-      line-height:42px;
+      font-size:33px;
+      line-height:33px;
       letter-spacing:2.5px;
+      @extend %shadow;
     }
 
     h2{
-      font-size: 23px;
+      font-size: 20px;
       color: #FFFFFF;
       letter-spacing: 1.45px;
-      line-height: 30px;
+      line-height: 26px;
       margin-top:20px;
+      @extend %shadow;
     }
 
     hr{
       border:0;
-      background:url('../images/underline.svg');
+      background:url('../images/underline.svg') no-repeat;
+      background-size:contain;
       height:11px;
-      margin:20px 0;
+      margin:20px auto;
+      width:200px;
+      
     }
 
     a{
       color:white;
       font-size:64px;
       text-shadow: 0px 0px 30px #0B152F;
+      animation: arrow 1.5s ease-in-out infinite;
+      transition:1.5s all ease-in-out;
+      height:60px;
+      display:block;
+      margin-top:20px;
+      &:hover{
+        animation:none;
+      }
     }
   }
 }
@@ -67,7 +83,41 @@
   
   @include bp(tablet){
     width:90%;
+    a{
+      display:none;
+      color:white;
+      font-size:30px;
+      margin-left:15px;
+      &:before{
+        vertical-align:middle;
+      }
+      &.icon-mp-arts{
+        font-size:60px;
+      }
+      &.icon-envelope{
+        &:before{
+          margin-top:-6px;
+        }
+      }
+      &:after{
+        display:none;
+      }
+    }
+    .not-desktop{
+      margin-top:20px;
+      a{
+        display:inline;
+      }
+    }
+    .icon-close{
+      transition: all $timing;
+      &:hover{
+        transform:scale(1.1);
+      }
+    }
   }
+
+
   
   &--show{
     transform:translateX(-50%) translateY(-50%);
@@ -96,6 +146,10 @@
     margin-top:25px;
     width:100%;
     text-align:center;
+    @include bp(tablet){
+      width:255px;
+      margin:0 auto;
+    }
     li{
       display:inline-block;
       text-align:left;
@@ -122,7 +176,9 @@
       }
       @include bp(tablet){
         display:block;
-        text-align:center;
+        &:nth-child(3){
+          margin-left:30px;
+        }
         &:after{
           display:none;
         }

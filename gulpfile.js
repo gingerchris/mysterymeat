@@ -104,6 +104,8 @@ gulp.task('scripts-deploy', function() {
     return gulp.src(['app/scripts/src/_includes/**/*.js', 'app/scripts/src/**/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
+               //compress :D
+               .pipe(uglify().on('error', gutil.log))
                //where we will store our finalized, compressed script
                .pipe(gulp.dest('dist/scripts'));
 });

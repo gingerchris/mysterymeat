@@ -8,3 +8,27 @@ $mustard : #EFC441;
 
 $bez : cubic-bezier(.25,.1,.25,1);
 $timing : 0.5s $bez;
+
+@keyframes pulse{
+  0%{
+    transform:none;
+  }
+  50%{
+    transform:scale(1.2);
+  }
+  100%{
+    transform:none;
+  }
+}
+
+@keyframes arrow{
+  0%{
+    transform:none;
+  }
+  50%{
+    transform:translateX(10px);
+  }
+  100%{
+    transform:none;
+  }
+}

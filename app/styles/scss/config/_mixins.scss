@@ -14,13 +14,19 @@
 @mixin bp($bp){
   $size : $bp;
   @if ($bp == "tablet"){
-    $size : '800px';
+    @media (max-width: 800px) {
+      @content;
+    }
   } @else if($bp == "mobile"){
-    $size : '500px';
+    @media (max-width: 500px) {
+      @content;
+    }
+  } @else if($bp == "desktop"){
+    @media (min-width: 800px) {
+      @content;
+    }
   }
-  @media (max-width: #{$size}) {
-    @content;
-  }
+  
 }
 
 @mixin background-gradient($startColor: #3C3C3C, $endColor: #999999) {
