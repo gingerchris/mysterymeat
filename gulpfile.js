@@ -44,7 +44,7 @@ gulp.task('symbols', function(){
         fontName: fontName,
         fontPath: '../fonts/' // set path to font (from your CSS file if relative)
       };
-      gulp.src('icon-font/templates/' + template + '.scss')
+      gulp.src('icon-font/' + template + '.scss')
         .pipe(consolidate('lodash', options))
         .pipe(rename({ basename:'_'+fontName }))
         .pipe(gulp.dest('app/styles/scss/general/')); // set path to export your CSS
@@ -101,11 +101,13 @@ gulp.task('scripts', ['hulk', 'symbols'], function() {
 //compiling our Javascripts for deployment
 gulp.task('scripts-deploy', function() {
     //this is where our dev JS scripts are
-    return gulp.src(['app/scripts/src/_includes/**/*.js', 'app/scripts/src/**/*.js'])
+    gulp.src(['app/scripts/admin.js'])
+        .pipe(gulp.dest('dist/scripts'));
+    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/jszip/dist/jszip.js', 'app/scripts/src/magnific-popup/dist/jquery.magnific-popup.js', 'app/scripts/src/jquery-touchswipe/jquery.touchSwipe.js', 'app/scripts/src/_includes/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //compress :D
-               .pipe(uglify().on('error', gutil.log))
+               //.pipe(uglify().on('error', gutil.log))
                //where we will store our finalized, compressed script
                .pipe(gulp.dest('dist/scripts'));
 });

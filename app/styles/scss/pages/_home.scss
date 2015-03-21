@@ -56,7 +56,8 @@
       display:block;
       margin-top:20px;
       &:hover{
-        animation:none;
+        animation: 0;
+        transform:translateX(0);
       }
     }
   }

@@ -21,7 +21,11 @@ function readURL(input,img) {
 var lb = {
   ct : $('#layout'),
   json : {},
+  pages : {},
   init : function(){
+    $.get('pages.json',function(data){
+      lb.pages = data;
+    })
     $('#blocks').on('click','li',function(){
       $('#iteminfo').removeClass('hide');
       $('.active').removeClass('active');
@@ -282,9 +286,11 @@ var lb = {
     //generate lightbox gallery
 
     json.content = templates["project"].render(json);
-    var page = templates["page"].render(json)
+    var page = templates["page"].render(json);
+
+    lb.pages[json.title] = path;
     zip.file(path+"/page.json",JSON.stringify(lb.json));
-    zip.file(path+"/add this to pages.json .txt",path);
+    zip.file(path+"/add this to pages.json .txt",JSON.stringify(lb.pages));
     zip.file(path+"/replace all the images in this folder with your images.txt","");
     zip.file(path+"/square.png is the preview image used on the projects page.txt","");
     zip.file(path+"/index.html", page);

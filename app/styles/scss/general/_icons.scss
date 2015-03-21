@@ -10,9 +10,9 @@
 }
 
 $icons : (
+  instagram
   mm
   twitter
-  instagram
   shop
   hourglass
   close
@@ -24,12 +24,15 @@ $icons : (
   hover
   info
   envelope
+  project-next
   mp-arts
+  project-prev
+  
 );
 $characters : (
+  "\F002"
   "\F001"
   "\F003"
-  "\F002"
   "\F004"
   "\F005"
   "\F006"
@@ -41,7 +44,10 @@ $characters : (
   "\F012"
   "\F013"
   "\F014"
+  "\F016"
   "\F015"
+  "\F017"
+  
 );
 
 %icon{

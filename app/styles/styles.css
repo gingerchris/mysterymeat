@@ -100,7 +100,7 @@ b, i {
   font-weight: normal;
   font-style: normal; }
 
-.icon-mm:before, .icon-after-mm:after, .icon-twitter:before, .icon-after-twitter:after, .icon-instagram:before, .icon-after-instagram:after, .icon-shop:before, .icon-after-shop:after, .icon-hourglass:before, .icon-after-hourglass:after, .icon-close:before, .icon-after-close:after, .mfp-container .mfp-close:after, .icon-arrow-left:before, .icon-after-arrow-left:after, .icon-arrow-right:before, .icon-after-arrow-right:after, .icon-arrowRight:before, .icon-after-arrowRight:after, .icon-cleaver:before, .icon-after-cleaver:after, .icon-pants:before, .icon-after-pants:after, .icon-hover:before, .icon-after-hover:after, .icon-info:before, .icon-after-info:after, .icon-envelope:before, .icon-after-envelope:after, .icon-mp-arts:before, .icon-after-mp-arts:after, .project__item:after, .project__item--2x2:after, .project__item--2x1:after, .project__item--1x1:after {
+.icon-instagram:before, .icon-after-instagram:after, .icon-mm:before, .icon-after-mm:after, .icon-twitter:before, .icon-after-twitter:after, .icon-shop:before, .icon-after-shop:after, .icon-hourglass:before, .icon-after-hourglass:after, .icon-close:before, .icon-after-close:after, .mfp-container .mfp-close:after, .icon-arrow-left:before, .icon-after-arrow-left:after, .icon-arrow-right:before, .icon-after-arrow-right:after, .icon-arrowRight:before, .icon-after-arrowRight:after, .icon-cleaver:before, .icon-after-cleaver:after, .icon-pants:before, .icon-after-pants:after, .icon-hover:before, .icon-after-hover:after, .icon-info:before, .icon-after-info:after, .icon-envelope:before, .icon-after-envelope:after, .icon-project-next:before, .icon-after-project-next:after, .icon-mp-arts:before, .icon-after-mp-arts:after, .icon-project-prev:before, .icon-after-project-prev:after, .project__item:after, .project__item--2x2:after, .project__item--2x1:after, .project__item--1x1:after {
   display: inline-block;
   font-family: "icons";
   font-style: normal;
@@ -108,6 +108,12 @@ b, i {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+.icon-instagram:before {
+  content: "\F002"; }
+
+.icon-after-instagram:after {
+  content: "\F002"; }
 
 .icon-mm:before {
   content: "\F001"; }
@@ -120,12 +126,6 @@ b, i {
 
 .icon-after-twitter:after {
   content: "\F003"; }
-
-.icon-instagram:before {
-  content: "\F002"; }
-
-.icon-after-instagram:after {
-  content: "\F002"; }
 
 .icon-shop:before {
   content: "\F004"; }
@@ -193,11 +193,23 @@ b, i {
 .icon-after-envelope:after {
   content: "\F014"; }
 
+.icon-project-next:before {
+  content: "\F016"; }
+
+.icon-after-project-next:after {
+  content: "\F016"; }
+
 .icon-mp-arts:before {
   content: "\F015"; }
 
 .icon-after-mp-arts:after {
   content: "\F015"; }
+
+.icon-project-prev:before {
+  content: "\F017"; }
+
+.icon-after-project-prev:after {
+  content: "\F017"; }
 
 /* Magnific Popup CSS */
 .mfp-bg {
@@ -620,6 +632,12 @@ footer {
     footer li:nth-child(3) a {
       -webkit-animation-delay: 1s;
               animation-delay: 1s; }
+    footer li:nth-child(4) a {
+      -webkit-animation-delay: 1.5s;
+              animation-delay: 1.5s; }
+    footer li:nth-child(5) a {
+      -webkit-animation-delay: 2s;
+              animation-delay: 2s; }
   footer a {
     color: #0B152F;
     -webkit-transition: opacity 0.3s cubic-bezier(.25, .1, .25, 1);
@@ -640,7 +658,6 @@ header {
   padding: 10px 0 10px;
   font-size: 26px;
   background: #EFC441;
-  border-bottom: 5px solid white;
   font-size: 32px;
   letter-spacing: 3.5px;
   line-height: 30px; }
@@ -679,7 +696,7 @@ header {
   min-height: 100vh;
   float: left;
   overflow: hidden;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
   position: relative; }
   .page__container {
     width: 100vw; }
@@ -743,8 +760,11 @@ header {
     display: block;
     margin-top: 20px; }
     .home__inner a:hover {
-      -webkit-animation: none;
-              animation: none; }
+      -webkit-animation: 0;
+              animation: 0;
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0); }
 
 .mm_about {
   position: fixed;
@@ -898,6 +918,14 @@ header {
             transition: 0.4s opacity cubic-bezier(.25, .1, .25, 1);
     -webkit-transition-delay: 0s;
             transition-delay: 0s; }
+  .project__item:only-child, .project__item--2x2:only-child, .project__item--2x1:only-child, .project__item--1x1:only-child {
+    float: left;
+    margin-left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    margin-top: 0px;
+    border: 6px solid white; }
   .project__item img, .project__item--2x2 img, .project__item--2x1 img, .project__item--1x1 img {
     width: 100%;
     float: left;
@@ -1097,6 +1125,17 @@ header {
           -ms-transform: scale(1.1);
               transform: scale(1.1); }
 
+.project__tiles {
+  zoom: 1;
+  background: #0B152F; }
+  .project__tiles:before, .project__tiles:after {
+    content: "\0020";
+    display: block;
+    height: 0;
+    overflow: hidden; }
+  .project__tiles:after {
+    clear: both; }
+
 .mfp-container a {
   color: white; }
   .mfp-container a.icon-arrow-left, .mfp-container a.icon-arrow-right {
@@ -1206,6 +1245,24 @@ header {
 @media (max-width: 800px) {
   .mfp-container .icon-arrow-right, .mfp-container .icon-arrow-left {
     display: none; } }
+
+a.mm__close {
+  color: white;
+  font-size: 30px;
+  position: fixed;
+  display: block;
+  right: 50px;
+  top: -50px;
+  z-index: 10;
+  -webkit-transition: all 0.5s cubic-bezier(.25, .1, .25, 1);
+          transition: all 0.5s cubic-bezier(.25, .1, .25, 1); }
+  a.mm__close--show {
+    right: 50px;
+    top: 50px; }
+  a.mm__close:hover {
+    -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+            transform: scale(1.2); }
 
 .mm__projects {
   z-index: 10;

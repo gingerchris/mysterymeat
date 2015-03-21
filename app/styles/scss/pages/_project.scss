@@ -26,6 +26,13 @@
     transition:0.4s opacity cubic-bezier(.25,.1,.25,1);
     transition-delay:0s;
   }
+  &:only-child{
+    float:left;
+    margin-left:50%;
+    transform:translateX(-50%);
+    margin-top:0px;
+    border:6px solid white;
+  }
   img{
     width:100%;
     float:left;
@@ -240,4 +247,9 @@
       transform: scale(1.1);
     }
   }
+}
+
+.project__tiles{
+  @include clearfix;
+  background:$navy;
 }
