@@ -100,7 +100,7 @@ b, i {
   font-weight: normal;
   font-style: normal; }
 
-.icon-mm:before, .icon-after-mm:after, .icon-instagram:before, .icon-after-instagram:after, .icon-twitter:before, .icon-after-twitter:after, .icon-shop:before, .icon-after-shop:after, .icon-hourglass:before, .icon-after-hourglass:after, .icon-close:before, .icon-after-close:after, .mfp-container .mfp-close:after, .icon-arrow-left:before, .icon-after-arrow-left:after, .icon-arrow-right:before, .icon-after-arrow-right:after, .icon-arrowRight:before, .icon-after-arrowRight:after, .icon-cleaver:before, .icon-after-cleaver:after, .icon-pants:before, .icon-after-pants:after, .icon-hover:before, .icon-after-hover:after, .icon-info:before, .icon-after-info:after, .icon-envelope:before, .icon-after-envelope:after, .icon-mp-arts:before, .icon-after-mp-arts:after, .icon-project-next:before, .icon-after-project-next:after, .icon-project-prev:before, .icon-after-project-prev:after, .project__item:after, .project__item--2x2:after, .project__item--2x1:after, .project__item--1x1:after {
+.icon-mm:before, .icon-after-mm:after, .icon-instagram:before, .icon-after-instagram:after, .icon-twitter:before, .icon-after-twitter:after, .icon-shop:before, .icon-after-shop:after, .icon-hourglass:before, .icon-after-hourglass:after, .icon-close:before, .icon-after-close:after, .mfp-container .mfp-close:after, .icon-arrow-right:before, .icon-after-arrow-right:after, .icon-arrow-left:before, .icon-after-arrow-left:after, .icon-arrowRight:before, .icon-after-arrowRight:after, .icon-cleaver:before, .icon-after-cleaver:after, .icon-pants:before, .icon-after-pants:after, .icon-hover:before, .icon-after-hover:after, .icon-info:before, .icon-after-info:after, .icon-envelope:before, .icon-after-envelope:after, .icon-mp-arts:before, .icon-after-mp-arts:after, .icon-project-next:before, .icon-after-project-next:after, .icon-project-prev:before, .icon-after-project-prev:after, .project__item:after, .project__item--2x2:after, .project__item--2x1:after, .project__item--1x1:after {
   display: inline-block;
   font-family: "icons";
   font-style: normal;
@@ -145,17 +145,17 @@ b, i {
 .icon-after-close:after, .mfp-container .mfp-close:after {
   content: "\F006"; }
 
-.icon-arrow-left:before {
-  content: "\F007"; }
-
-.icon-after-arrow-left:after {
-  content: "\F007"; }
-
 .icon-arrow-right:before {
   content: "\F008"; }
 
 .icon-after-arrow-right:after {
   content: "\F008"; }
+
+.icon-arrow-left:before {
+  content: "\F007"; }
+
+.icon-after-arrow-left:after {
+  content: "\F007"; }
 
 .icon-arrowRight:before {
   content: "\F009"; }
