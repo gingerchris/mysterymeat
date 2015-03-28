@@ -929,6 +929,10 @@ header {
             transform: translateX(-50%);
     margin-top: 0px;
     border: 6px solid white; }
+    .project__item:only-child:hover img, .project__item--2x2:only-child:hover img, .project__item--2x1:only-child:hover img, .project__item--1x1:only-child:hover img {
+      opacity: 1; }
+    .project__item:only-child:hover:after, .project__item--2x2:only-child:hover:after, .project__item--2x1:only-child:hover:after, .project__item--1x1:only-child:hover:after {
+      display: none; }
   .project__item img, .project__item--2x2 img, .project__item--2x1 img, .project__item--1x1 img {
     width: 100%;
     float: left;

@@ -88,7 +88,7 @@ gulp.task('scripts', ['hulk'], function() {
     gulp.src(['node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js','app/scripts/src/_includes/templates-compiled.js','app/scripts/src/FileSaver.js','app/scripts/src/jszip.js','app/scripts/src/admin.js'])
     .pipe(concat('admin.js'))
     .pipe(gulp.dest('app/scripts'))
-    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/*.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/jszip/dist/jszip.js', 'app/scripts/src/magnific-popup/dist/jquery.magnific-popup.js', 'app/scripts/src/jquery-touchswipe/jquery.touchSwipe.js', 'app/scripts/src/_includes/*.js'])
+    return gulp.src(['app/scripts/src/lib/*.js', 'app/scripts/src/interaction.js', 'node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js', 'app/scripts/src/jszip/dist/jszip.js', 'app/scripts/src/jquery-touchswipe/jquery.touchSwipe.js', 'app/scripts/src/_includes/*.js'])
                 //this is the filename of the compressed version of our JS
                .pipe(concat('app.js'))
                //catch errors
@@ -171,6 +171,14 @@ gulp.task('html-deploy', function() {
     //grab everything, which should include htaccess, robots, etc
     gulp.src('app/*')
         .pipe(gulp.dest('dist'));
+
+    var projects = require('./app/pages.json');
+    var pages = Object.keys(projects);
+    for (var i = 0; i < pages.length; i++){
+      console.log(projects[pages[i]]);
+      gulp.src('app/'+projects[pages[i]]+'/*')
+        .pipe(gulp.dest('dist/' + projects[pages[i]] + '/'));
+    }
 
     //grab any hidden files too
     gulp.src('app/.*')

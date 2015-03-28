@@ -32,6 +32,14 @@
     transform:translateX(-50%);
     margin-top:0px;
     border:6px solid white;
+    &:hover{
+      img{
+        opacity:1;
+      }
+      &:after{
+        display:none;
+      }
+    }
   }
   img{
     width:100%;

@@ -1,0 +1,54 @@
+#blocks {
+  float: left;
+  width: 30%; }
+
+#layout {
+  width: 400px;
+  float: left;
+  margin-left: 20px;
+  border: 1px solid black;
+  min-height: 100px;
+  padding-bottom: 200px;
+  position: relative; }
+  #layout div {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border: 1px solid black;
+    background: rgba(95, 37, 128, 0.5);
+    cursor: pointer;
+    overflow: hidden; }
+    #layout div img {
+      max-height: 100%; }
+    #layout div:hover {
+      background: rgba(95, 37, 128, 0.8); }
+    #layout div.active {
+      background: #5f2580; }
+    #layout div.s2x2 {
+      width: 50%;
+      height: 200px; }
+    #layout div.s2x1, #layout div.s1x1 {
+      width: 50%;
+      height: 100px; }
+    #layout div.s1x1 {
+      background: -webkit-gradient(linear, left top, right top, from(rgba(95, 37, 128, 0.5)), color-stop(50%, rgba(95, 37, 128, 0.5)), color-stop(50%, black), color-stop(51%, rgba(95, 37, 128, 0.5)));
+      background: -webkit-linear-gradient(left, rgba(95, 37, 128, 0.5) 0%, rgba(95, 37, 128, 0.5) 50%, black 50%, rgba(95, 37, 128, 0.5) 51%);
+      background: linear-gradient(to right, rgba(95, 37, 128, 0.5) 0%, rgba(95, 37, 128, 0.5) 50%, black 50%, rgba(95, 37, 128, 0.5) 51%); }
+      #layout div.s1x1:hover {
+        background: -webkit-gradient(linear, left top, right top, from(rgba(95, 37, 128, 0.8)), color-stop(50%, rgba(95, 37, 128, 0.8)), color-stop(50%, black), color-stop(51%, rgba(95, 37, 128, 0.8)));
+        background: -webkit-linear-gradient(left, rgba(95, 37, 128, 0.8) 0%, rgba(95, 37, 128, 0.8) 50%, black 50%, rgba(95, 37, 128, 0.8) 51%);
+        background: linear-gradient(to right, rgba(95, 37, 128, 0.8) 0%, rgba(95, 37, 128, 0.8) 50%, black 50%, rgba(95, 37, 128, 0.8) 51%); }
+      #layout div.s1x1.active {
+        background: -webkit-gradient(linear, left top, right top, from(#5f2580), color-stop(50%, #5f2580), color-stop(50%, black), color-stop(51%, #5f2580));
+        background: -webkit-linear-gradient(left, #5f2580 0%, #5f2580 50%, black 50%, #5f2580 51%);
+        background: linear-gradient(to right, #5f2580 0%, #5f2580 50%, black 50%, #5f2580 51%); }
+      #layout div.s1x1 img {
+        max-width: 50%;
+        float: right; }
+        #layout div.s1x1 img:first-child {
+          float: left; }
+    #layout div.new {
+      position: absolute;
+      bottom: 0; }
+
+.hide {
+  display: none; }
