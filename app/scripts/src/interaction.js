@@ -77,9 +77,8 @@ var paginate = {
   init : function(){
     $(window).on('stateUpdate',paginate.pop);
     $(window).on('popstate',paginate.pop);
-
     $.ajax({
-      url : "/pages.json"
+      url : "//" + window.location.host + "/pages.json"
     }).done(function(data){
       $.each(data, function(k,v){
         paginate.pages.push(v);
