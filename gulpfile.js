@@ -83,7 +83,7 @@ gulp.task('hulk', function() {
 });
 
 //compiling our Javascripts
-gulp.task('scripts', ['hulk', 'symbols'], function() {
+gulp.task('scripts', ['hulk'], function() {
     //this is where our dev JS scripts are
     gulp.src(['node_modules/hogan/node_modules/hogan.js/dist/hogan-3.0.2.js','app/scripts/src/_includes/templates-compiled.js','app/scripts/src/FileSaver.js','app/scripts/src/jszip/dist/jszip.js','app/scripts/src/admin.js'])
     .pipe(concat('admin.js'))
