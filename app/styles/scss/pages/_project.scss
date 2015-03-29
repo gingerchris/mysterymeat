@@ -109,8 +109,9 @@
   .project__item--1x1{
     float:left;
     &:last-child{
-      border-right:0;
+      //border-right:0;
       border-left:3px solid white;
+      border-right:3px solid white;
     }
     &:first-child{
       border-left:3px solid white;

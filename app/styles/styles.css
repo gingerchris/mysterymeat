@@ -993,8 +993,8 @@ header {
   .project__items .project__item--1x1, .project__items--left .project__item--1x1, .project__items--right .project__item--1x1 {
     float: left; }
     .project__items .project__item--1x1:last-child, .project__items--left .project__item--1x1:last-child, .project__items--right .project__item--1x1:last-child {
-      border-right: 0;
-      border-left: 3px solid white; }
+      border-left: 3px solid white;
+      border-right: 3px solid white; }
     .project__items .project__item--1x1:first-child, .project__items--left .project__item--1x1:first-child, .project__items--right .project__item--1x1:first-child {
       border-left: 3px solid white;
       border-right: 3px solid white; }
