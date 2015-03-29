@@ -117,6 +117,26 @@ var paginate = {
       paginate.loadPrev();
     });
   },
+  preload : function(){
+    var nextKey = paginate.currentPos +1;
+    var next;
+    if ( typeof paginate.pages[ nextKey ] === "undefined" ){
+      nextKey = 0;
+    }
+    next = paginate.pages[ nextKey ];
+    paginate.loadPage('/'+next, function(data){
+      var img = $(data).find('img').each(function(){
+        $('body').append(this);
+        $(this).css({
+          height:'1px',
+          width:'1px',
+          opacity: 0
+        }).load(function(){
+          $(this).remove();
+        })
+      });
+    })
+  },
   resetState : function(){
     history.pushState({ page : true , key : paginate.currentPos }, '', '/'+paginate.pages[paginate.currentPos]);
   },
@@ -203,6 +223,7 @@ var paginate = {
     }
   },
   initNext : function(){
+    paginate.preload();
     gallery.init();
     infoverlay.init();
   }

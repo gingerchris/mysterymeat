@@ -965,6 +965,8 @@ header {
   .project__item--2x1 {
     width: 50%;
     margin-top: -6px; }
+    .project__item--2x1:only-child {
+      width: 100%; }
     @media (max-width: 960px) {
       .project__item--2x1 {
         width: 100%; } }
