@@ -601,11 +601,11 @@ a.icon-instagram:after {
   .not-mobile {
     display: none; } }
 
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   .not-tablet {
     display: none; } }
 
-@media (min-width: 800px) {
+@media (min-width: 960px) {
   .not-desktop {
     display: none; } }
 
@@ -787,7 +787,7 @@ header {
   letter-spacing: .85px;
   line-height: 17px;
   color: white; }
-  @media (max-width: 800px) {
+  @media (max-width: 960px) {
     .mm_about {
       width: 90%; }
       .mm_about a {
@@ -835,7 +835,7 @@ header {
     margin-top: 25px;
     width: 100%;
     text-align: center; }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
       .mm_about ul {
         width: 255px;
         margin: 0 auto; } }
@@ -860,7 +860,7 @@ header {
         padding-right: 0; }
         .mm_about ul li:last-child:after {
           display: none; }
-      @media (max-width: 800px) {
+      @media (max-width: 960px) {
         .mm_about ul li {
           display: block; }
           .mm_about ul li:nth-child(3) {
@@ -871,7 +871,7 @@ header {
       color: white;
       text-decoration: none;
       line-height: 40px; }
-      @media (max-width: 800px) {
+      @media (max-width: 960px) {
         .mm_about ul a, .mm_about ul span {
           line-height: 30px; }
           .mm_about ul a.icon-mp-arts:before, .mm_about ul span.icon-mp-arts:before {
@@ -880,7 +880,7 @@ header {
         vertical-align: top;
         margin-right: 10px;
         font-size: 28px; }
-        @media (max-width: 800px) {
+        @media (max-width: 960px) {
           .mm_about ul a:before, .mm_about ul span:before {
             font-size: 20px;
             line-height: 22px; } }
@@ -944,7 +944,7 @@ header {
     float: left;
     border-left: 0;
     border-right: 3px solid white; }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
       .project__item--left {
         border-left: 0;
         border-right: 0; } }
@@ -952,20 +952,20 @@ header {
     border-right: 0;
     border-left: 3px solid white;
     float: right; }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
       .project__item--right {
         border-left: 0;
         border-right: 0; } }
   .project__item--2x2 {
     width: 50%;
     margin-top: -6px; }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
       .project__item--2x2 {
         width: 100%; } }
   .project__item--2x1 {
     width: 50%;
     margin-top: -6px; }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
       .project__item--2x1 {
         width: 100%; } }
   .project__item--1x1 {
@@ -985,7 +985,7 @@ header {
   width: 50%;
   -webkit-transition: 1s -webkit-transform cubic-bezier(.25, .1, .25, 1);
           transition: 1s transform cubic-bezier(.25, .1, .25, 1); }
-  @media (max-width: 800px) {
+  @media (max-width: 960px) {
     .project__items, .project__items--left, .project__items--right {
       width: 100%; } }
   .project__items .project__item--1x1, .project__items--left .project__item--1x1, .project__items--right .project__item--1x1 {
@@ -996,7 +996,7 @@ header {
     .project__items .project__item--1x1:first-child, .project__items--left .project__item--1x1:first-child, .project__items--right .project__item--1x1:first-child {
       border-left: 3px solid white;
       border-right: 3px solid white; }
-      @media (max-width: 800px) {
+      @media (max-width: 960px) {
         .project__items .project__item--1x1:first-child, .project__items--left .project__item--1x1:first-child, .project__items--right .project__item--1x1:first-child {
           border-left: 0; } }
   .project__items--left {
@@ -1088,7 +1088,7 @@ header {
   z-index: 10;
   text-align: center;
   color: white; }
-  @media (max-width: 800px) {
+  @media (max-width: 960px) {
     .project__detail {
       width: 90%; } }
   .project__detail--show {
@@ -1099,7 +1099,7 @@ header {
     font-size: 42px;
     line-height: 42px;
     letter-spacing: 2.5px; }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
       .project__detail h1 {
         font-size: 31px;
         line-height: 31px;
@@ -1115,7 +1115,7 @@ header {
     letter-spacing: 1.45px;
     line-height: 30px;
     margin-top: 20px; }
-    @media (max-width: 800px) {
+    @media (max-width: 960px) {
       .project__detail p {
         font-size: 17px;
         letter-spacing: 1px;
@@ -1249,7 +1249,7 @@ header {
   -webkit-transform: scale(1.1);
       -ms-transform: scale(1.1);
           transform: scale(1.1); }
-@media (max-width: 800px) {
+@media (max-width: 960px) {
   .mfp-container .icon-arrow-right, .mfp-container .icon-arrow-left {
     display: none; } }
 
